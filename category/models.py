@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.urls import reverse
 # Create your models here.
 
 class Category(models.Model):
@@ -12,6 +13,9 @@ class Category(models.Model):
         verbose_name = _('category')
         verbose_name_plural = _('categories')
         ordering = ('title',)
+
+    def get_url(self):
+        return reverse('store_by_category', args=[self.slug])
 
     def __str__(self):
         return self.title
