@@ -1,1 +1,1 @@
-# ecommerrce-django
+# django ecommerce
